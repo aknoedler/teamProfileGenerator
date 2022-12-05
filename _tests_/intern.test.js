@@ -10,7 +10,7 @@ describe("Intern", () => {
             expect(intern.name).toEqual('John Doe');
             expect(intern.id).toEqual(1);
             expect(intern.email).toEqual('johndoe@gmail.com');
-            expect(intern.github).toEqual('Northwestern');
+            expect(intern.school).toEqual('Northwestern');
         })
 
     })
@@ -20,7 +20,7 @@ describe("Intern", () => {
         it("should return the intern's school as a string", () => {
             const intern = new Intern('John Doe', 1, 'johndoe@gmail.com', 'Northwestern');
 
-            expect(intern).getSchool().toEqual('Northwestern');
+            expect(intern.getSchool()).toEqual('Northwestern');
         })
     })
 

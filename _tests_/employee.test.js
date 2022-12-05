@@ -39,7 +39,7 @@ describe("Employee", () => {
         it("should return the employee's email", () => {
             const employee = new Employee('John Doe', 1, 'johndoe@gmail.com');
 
-            expect(employee.getName()).toEqual('johndoe@gmail.com');
+            expect(employee.getEmail()).toEqual('johndoe@gmail.com');
         })
     
     })
