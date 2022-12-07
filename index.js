@@ -4,7 +4,8 @@ const fs = require('fs');
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
-const createHTML = requite('./src/createHTML')
+
+const createHTML = require('./src/createHTML');
 
 const staff = [];
 
@@ -76,6 +77,8 @@ internQuestions = [
         name: 'internSchool'
     }
 ];
+
+
 
 function newEmployeePrompt() {
     inquirer.prompt(
