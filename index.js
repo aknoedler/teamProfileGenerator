@@ -1,14 +1,19 @@
+// Required packages
 const inquirer = require('inquirer');
 const fs = require('fs');
 
+// Import classes
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 
+// Import method for creating HTML in a template literal
 const createHTML = require('./src/createHTML');
 
+// An array for storing the created employee objects
 const staff = [];
 
+// Arrays of objects for inquirer
 managerQuestions = [
     {
         type: 'input',
@@ -79,7 +84,11 @@ internQuestions = [
 ];
 
 
-
+// A function that runs through adding a new employee, with options for engineer, intern, or finish.
+// If engineer or intern is selected, it loads the appropriate questions, then pushes a new employee
+// object to the staff array, then recursively calls the function again. If finish is selected, then
+// the createHTML function is called with the staff array passed in, with the returned template literal
+// written to dist/index.html.
 function newEmployeePrompt() {
     inquirer.prompt(
         {
@@ -118,6 +127,8 @@ function newEmployeePrompt() {
 
 }
 
+// Begins the prompt with the manager questions, then calls the
+// newEmployeePrompt function.
 inquirer.prompt(managerQuestions).then((response) => {
     staff.push(new Manager(
         response.managerName,

@@ -1,3 +1,4 @@
+// Creates the HTML for an employee card based on the employee object passed in.
 function createCard(employee) {
     return `<div class="card m-5" style="width: 18rem;">
         <h2 class="card-header bg-info">${employee.getName()}</h2>
@@ -12,6 +13,7 @@ function createCard(employee) {
     </div>`
 }
 
+// Creates the HTML that is specific to each particular role.
 function getInfo(employee) {
     switch (employee.getRole()) {
         case "Manager":
@@ -23,7 +25,9 @@ function getInfo(employee) {
     }
 }
 
+// Main function for creating the HTML template literal.
 function createHTML(array) {
+    // Uses the array passed in to create an array of template literals.
     let cards = array.map(employee => createCard(employee));
     return `<!DOCTYPE html>
     <html lang="en">
